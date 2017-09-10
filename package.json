@@ -1,0 +1,26 @@
+{
+  "name": "nelreina-uitility-lib",
+  "version": "0.0.1",
+  "description": "Library with utility functions for Javascript",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "nodemon --watch src --exec babel-node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nelreina/nelreina-uitility-lib.git"
+  },
+  "keywords": [],
+  "author": "Nelson Reina <nelreina@gmail.com>",
+  "license": "Apache License 2.0",
+  "bugs": {
+    "url": "https://github.com/nelreina/nelreina-uitility-lib/issues"
+  },
+  "homepage": "https://github.com/nelreina/nelreina-uitility-lib#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "nodemon": "^1.12.0"
+  }
+}
