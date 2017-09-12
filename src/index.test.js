@@ -1,18 +1,27 @@
-import { sum, aSyncFunc, fetchData } from './index';
+import S from 'string';
+import { encrypt, getSalt, compare } from './index';
+S.extendPrototype();
+const hash = '$2a$12$ALvTg23Vlf.ZctFwoguJS./935JrXCELGwk/YxBPI8fgEEooHVIUC';
 
-test('should add 1 + 2 = 3', () => {
-  expect(sum(1, 2)).toBe(3);
+test('Salt value should return a string with 29 char', async () => {
+  let data = await getSalt(12);
+  expect(typeof data).toBe('string');
+  expect(data).toHaveLength(29);
 });
 
-test('Test async code!', async () => {
-  let data = await aSyncFunc(true);
-  expect(data).toBe('Its OK');
+test('Encryption value should return a string', async () => {
+  let data = await encrypt(false);
+  expect(typeof data).toBe('string');
 });
 
-test('Test async error code!', async () => {
+test('Hash code should be valid', async () => {
+  let data = await compare('awesomepassword', hash);
+  expect(data).toBeTruthy();
+});
+test('Hash code should be NOT valid', async () => {
   try {
-    let data = await aSyncFunc(false);
+    let data = await compare('awesomepassword', hash);
   } catch (error) {
-    expect(error).toBe('Its NOT OK');
+    expect(error).toBeTruthy();
   }
 });
