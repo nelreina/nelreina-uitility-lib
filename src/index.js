@@ -1,3 +1,5 @@
+require('babel-core/register');
+require('babel-polyfill');
 import bcrypt from 'bcrypt-nodejs';
 export const getSalt = salt_work_factor =>
   new Promise((resolve, reject) => {
