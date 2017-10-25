@@ -1,5 +1,7 @@
 require('babel-core/register');
 require('babel-polyfill');
+const fs = require('fs');
+
 import bcrypt from 'bcrypt-nodejs';
 export const getSalt = salt_work_factor =>
   new Promise((resolve, reject) => {
@@ -25,3 +27,10 @@ export const compare = (value, hash) =>
       resolve(isValid);
     });
   });
+
+export const readFile = (path) => new Promise((resolve, reject) =>{
+	fs.readFile(path, 'utf-8', (err, data) =>{
+		if (err) reject(err);
+		resolve(data);
+	})
+});
