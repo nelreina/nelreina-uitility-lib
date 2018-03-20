@@ -1,4 +1,4 @@
-# THIS PACKAGE IS NOT DEPRECATED! USE npm package nelreina-node-utils
+# THIS PACKAGE IS DEPRECATED! USE npm package nelreina-node-utils
 
 ### nelreina-utility-lib
 
